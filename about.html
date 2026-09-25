@@ -8,7 +8,10 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-T6JJ39J1J9');
+  gtag('config', 'G-T6JJ39J1J9',
+    new URLSearchParams(location.search).get('debug_mode') === '1'
+      ? { debug_mode: true }
+      : {});
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
